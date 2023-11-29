@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt_BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Localize uma OSC | OSCFinder</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""/>
+
+    <!-- Make sure you put this AFTER Leaflet's CSS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""></script>
+
+    <link rel="icon" href="/images/logo-icon.png" />
+
+    <link rel="stylesheet" href="/css/main.css" />
+    <link rel="stylesheet" href="/css/animations.css" />
+    <link rel="stylesheet" href="/css/page-institutes.css" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="page-institutes">
+      <aside class="animate-right">
+        <header>
+          <img src="/images/map-marker.svg" alt="ONGFinder" />
+
+          <h2>Escolha uma OSC no mapa</h2>
+
+          <p>Muitas pessoas estão esperando sua visita :)</p>
+        </header>
+
+        <footer>
+          <strong>Zona Norte</strong>
+          <p>Rio de Janeiro</p>
+        </footer>
+      </aside>
+
+      <div id="mapid" class="animate-appear"></div>
+
+      <div class="institutes">
+        {{#each institutes}}
+
+         <span hidden
+         data-id="{{this.id}}"
+         data-name="{{this.name}}"
+         data-lat="{{this.lat}}"
+         data-lng="{{this.lng}}"
+        ></span>
+
+       {{/each}}
+      </div>
+      
+
+      <a
+        href="/create-institute"
+        class="create-institutes"
+        title="Cadastre uma OSC"
+      >
+        <img src="/images/plus.svg" alt="Criar OSC" />
+      </a>
+    </div>
+
+    <script src="/scripts/page-institutes.js"></script>
+    
+  </body>
+</html>
